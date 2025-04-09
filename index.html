@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test JS - Mini Arcade</title>
+  <style>
+    body { font-family: sans-serif; background: #111; color: #fff; text-align: center; padding: 2em; }
+    .page { display: none; }
+    .page.active { display: block; }
+    button { padding: 1em 2em; margin: 1em; font-size: 1.2em; }
+  </style>
+</head>
+<body>
+  <h1>Test Navigation JS</h1>
+  <button onclick="showPage('home')">Accueil</button>
+  <button onclick="showPage('jeu')">Jeu</button>
+
+  <div id="home" class="page active">
+    <h2>Bienvenue sur la page d'accueil</h2>
+  </div>
+
+  <div id="jeu" class="page">
+    <h2>Voici la page du jeu 🎮</h2>
+  </div>
+
+  <script src="test-script.js"></script>
+</body>
+</html>
