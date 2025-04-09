@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini Arcade - Stable</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #111, #222);
+      color: #f1f1f1;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {
+      background-color: #000;
+      padding: 1em;
+    }
+    nav a {
+      color: #0ff;
+      text-decoration: none;
+      margin: 0 1em;
+      font-weight: bold;
+    }
+    .page { display: none; padding: 2em; }
+    .page.active { display: block; }
+    button {
+      padding: 0.8em 1.5em;
+      margin-top: 1em;
+      background: #0ff;
+      color: #000;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🎮 Mini Arcade</h1>
+    <nav>
+      <a href="#" onclick="showPage('home')">Accueil</a>
+      <a href="#" onclick="showPage('pendu')">Pendu</a>
+      <a href="#" onclick="showPage('clicker')">Clicker</a>
+      <a href="#" onclick="showPage('logique')">Logique</a>
+    </nav>
+  </header>
+
+  <section id="home" class="page active">
+    <h2>Bienvenue dans la Mini Arcade !</h2>
+    <p>Choisis un jeu dans le menu ci-dessus.</p>
+  </section>
+
+  <section id="pendu" class="page">
+    <h2>Jeu du Pendu</h2>
+    <p>Mot caché : <span id="pendu-mot">_ _ _ _</span></p>
+    <button onclick="document.getElementById('pendu-mot').textContent = 'C A T S';">Révéler</button>
+  </section>
+
+  <section id="clicker" class="page">
+    <h2>Clicker Game</h2>
+    <p>Points : <span id="points">0</span></p>
+    <button onclick="addClick()">Clic !</button>
+  </section>
+
+  <section id="logique" class="page">
+    <h2>Jeu de Logique</h2>
+    <p>Combien font 2 + 2 ?</p>
+    <input type="text" id="answer" />
+    <button onclick="checkAnswer()">Valider</button>
+    <p id="result"></p>
+  </section>
+
+  <script src="arcade-script.js"></script>
+</body>
+</html>
